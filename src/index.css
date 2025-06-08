@@ -1,201 +1,169 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
 
-body {
-  background: linear-gradient(135deg, #e0f7fa 0%, #ffecb3 100%);
-  min-height: 100vh;
+body, html {
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
 }
 
 .profile-card {
-  width: 380px;
-  background: linear-gradient(135deg, #0288d1, #26c6da); /* blue to cyan */
-  border-radius: 30px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
-  color: #f0f8ff; /* light text color */
+  min-height: 100vh;
+  width: 100vw;
+  padding: 40px 60px;
+  box-sizing: border-box;
+  background: linear-gradient(145deg, #8e54e9, #4776e6);
 }
 
 .nav-buttons {
   display: flex;
-  justify-content: space-evenly;
-  background: rgba(255,255,255,0.15);
-  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.05);
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
 }
 
 .nav-buttons button {
-  flex: 1;
-  padding: 14px 0;
-  border: none;
   background: transparent;
-  font-size: 1.05rem;
-  color: #d0f0fc;
-  cursor: pointer;
-  transition: color 0.3s, border-bottom 0.3s;
-  font-family: 'Poppins', sans-serif;
-  border-bottom: 3px solid transparent;
-}
-
-.nav-buttons button.active {
-  color: #ffffff;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 700;
-  border-bottom: 3px solid #ffffff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 12px 25px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
 }
 
-.nav-buttons button:hover:not(.active) {
-  color: #b3e5fc;
+.nav-buttons button.active,
+.nav-buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
 }
 
 .content-section {
-  max-height: 510px;
-  padding: 24px 28px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: #0288d1 rgba(0,0,0,0.1);
-  color: #f0f8ff;
-  font-size: 1rem;
-  line-height: 1.5;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 1.3rem;
+  max-width: 900px;
+  margin: 0 auto;
+  gap: 25px;
 }
 
-/* Scrollbar for Webkit */
-.content-section::-webkit-scrollbar {
-  width: 8px;
-}
-
-.content-section::-webkit-scrollbar-thumb {
-  background: #0288d1;
-  border-radius: 4px;
+.home-content .profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  margin-bottom: 25px;
+  object-fit: cover;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
 h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.7rem;
-  color: #e1f5fe; /* lighter blue for headings */
-  margin-bottom: 20px;
-  text-align: center;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
-.home-info {
-  font-size: 1.15rem;
-  color: #cde9fb;
-  margin: 8px 0;
-  font-weight: 600;
-  text-align: center;
-}
-
-.about-text {
-  font-size: 1.05rem;
-  color: #d0f0fc;
-  text-align: center;
+p {
+  margin: 6px 0;
+  font-weight: 500;
+  opacity: 0.85;
 }
 
 .skills-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 8px;
   justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+  font-size: 1.1rem;
 }
 
 .skill-item {
-  background: rgba(255, 255, 255, 0.3);
-  color: #e1f5fe;
-  padding: 9px 16px;
-  border-radius: 25px;
-  font-size: 0.95rem;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-  user-select: none;
-  transition: background-color 0.3s;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: default;
+  transition: background-color 0.3s ease;
 }
 
 .skill-item:hover {
-  background: rgba(255, 255, 255, 0.5);
-  cursor: default;
-}
-
-.hobbies-list {
-  margin-top: 12px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-  color: #d0f0fc;
-  font-size: 1rem;
-  font-weight: 600;
+  background: #fff;
+  color: #4776e6;
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.15); /* semi-transparent white */
-  border-radius: 18px;
-  padding: 18px 22px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px 30px;
   margin-bottom: 20px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 20px;
   text-align: left;
-  color: #e0f7fa; /* light cyan text */
-}
-
-.project-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
 .project-title {
   font-weight: 700;
-  font-size: 1.15rem;
-  margin-bottom: 10px;
-  color: #b3e5fc; /* softer light blue */
+  margin-bottom: 12px;
+  color: #f0e130;
+  font-size: 1.6rem;
 }
 
-.project-desc, .project-features {
-  color: #d0f0fc; /* light text */
+.project-desc {
+  margin-bottom: 15px;
+  font-style: italic;
+  font-size: 1.1rem;
 }
 
-.project-features {
-  list-style: disc inside;
-  margin-left: 12px;
+.project-features li {
+  margin-left: 20px;
+  list-style-type: disc;
+  color: #eee;
+  font-size: 1rem;
 }
 
-.contact-section {
-  margin-top: auto;
-  padding: 16px 28px 24px;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.15);
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-size: 1.4rem;
+  align-items: center;
 }
 
-.contact-link {
-  margin: 0 14px;
-  color: #b3e5fc;
-  font-size: 1.3rem;
-  transition: color 0.3s;
-  display: inline-block;
-  vertical-align: middle;
-  cursor: pointer;
+.contact-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+  transition: color 0.3s ease;
 }
 
-.contact-link:hover {
-  color: #ffffff;
-  text-decoration: underline;
+.contact-links a:hover {
+  color: #ffd700;
 }
 
-/* Icon styles */
-.contact-link svg {
-  vertical-align: middle;
-  fill: currentColor;
-  width: 24px;
-  height: 24px;
+.contact-links i {
+  font-size: 2rem;
 }
 
-/* Scrollbar tweaks for WebKit */
-.content-section::-webkit-scrollbar-thumb:hover {
-  background: #01579b;
+/* fade in animation */
+.content-section > * {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(15px);}
+  to {opacity: 1; transform: translateY(0);}
 }
